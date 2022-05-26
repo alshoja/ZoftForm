@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { AuthService } from '../services/auth.service';
 import Validation from './utils/validation';
 
@@ -9,7 +10,8 @@ import Validation from './utils/validation';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent implements OnInit, OnDestroy {
+  public authSubscription!: Subscription;
   form = this.fb.group({
     firstName: ['', Validators.required],
     lastName: [
@@ -41,17 +43,20 @@ export class RegisterComponent implements OnInit {
     if (this.form.invalid) {
       return;
     }
-    this.authService.register(this.form.value).subscribe({
+    this.authSubscription = this.authService.register(this.form.value).subscribe({
       next: (auth) => {
+        console.log(JSON.stringify(this.form.value, null, 2));
         this.router.navigateByUrl('register/success');
       },
       error: (err) => { console.error(err) }
     });
-    console.log(JSON.stringify(this.form.value, null, 2));
   }
 
   get f(): { [key: string]: AbstractControl } {
     return this.form.controls;
   }
 
+  ngOnDestroy() {
+    this.authSubscription.unsubscribe()
+  }
 }
