@@ -6,7 +6,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
-    path: 'register',
+    path: 'home',
     component: RegisterComponent,
   },
 ];

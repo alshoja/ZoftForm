@@ -5,13 +5,18 @@ import { RegisterComponent } from './register/register.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home/register',
+    redirectTo: '/register/home',
     pathMatch: 'full'
+  },
+  {
+    path: 'register',
+    loadChildren: () =>
+      import('./register/register.module').then((m) => m.RegisterModule),
   },
   {
     path: 'home',
     loadChildren: () =>
-      import('./register/register.module').then((m) => m.RegisterModule),
+      import('./dashboard/dashboard.module').then((m) => m.DashboardModule),
   },
 ];
 

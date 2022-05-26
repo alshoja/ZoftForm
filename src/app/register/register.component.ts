@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators, AbstractControl } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 import Validation from './utils/validation';
 
 @Component({
@@ -30,7 +32,7 @@ export class RegisterComponent implements OnInit {
       validators: [Validation.match('password', 'confirmPassword')]
     });
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private readonly authService: AuthService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -40,6 +42,12 @@ export class RegisterComponent implements OnInit {
     if (this.form.invalid) {
       return;
     }
+    this.authService.register(this.form.value).subscribe({
+      next: (post) => {
+        this.router.navigateByUrl('/post/detail', { state: post });
+      },
+      error: (err) => { console.error(err) }
+    });
     console.log(JSON.stringify(this.form.value, null, 2));
   }
 
