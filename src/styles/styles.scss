@@ -1,0 +1,218 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(172, 255, 255);
+}
+
+button {
+  padding: 0.9em 1.7em;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 0.5em;
+  border: 1px solid #e8e8e8;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+button:hover {
+  border: 1px solid white;
+}
+
+button:active {
+  box-shadow: 4px 4px 12px #c5c5c5, -4px -4px 12px #ffffff;
+}
+
+button:disabled,
+button[disabled] {
+  border: 1px solid #eeeded;
+  background-color: #d3cccc;
+  color: #7a7a7a;
+  cursor: not-allowed;
+}
+
+.card {
+  background-color: $white;
+  margin-top: 10px;
+  border-radius: $leftRadius;
+  width: 50%;
+  margin: auto;
+  margin-bottom: auto;
+}
+
+.col {
+  padding: 1em;
+  height: auto;
+}
+
+.col-main {
+  flex: 1;
+}
+
+.border-left {
+  border-top-left-radius: $leftRadius;
+  border-bottom-left-radius: $leftRadius;
+}
+
+@media only screen and (min-width: 1120px) {
+  .layout {
+    display: flex;
+  }
+}
+
+.primary {
+  background: $primary;
+}
+
+.text-white {
+  color: $white;
+}
+
+.text-primary {
+  color: $primary;
+}
+
+.information-pane h3 {
+  @include pane;
+}
+
+.information-pane .text-white {
+  @include pane;
+}
+
+.text-small {
+  font-size: 0.8rem;
+}
+
+.info-pane-button {
+  padding: 15px;
+}
+
+.form-pane h3 {
+  @include pane;
+}
+
+.form-pane .text-white {
+  @include pane;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.form-body {
+  background: $white;
+  padding: 5px 10px;
+}
+
+.input-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin: 10px 5px;
+}
+
+label {
+  color: #464646;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  font-size: 18px;
+  height: 34px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #666;
+  border: 1px solid #d6d6d6;
+  border-radius: 4px;
+  outline: none;
+}
+
+@media only screen and (max-width: 1600px) {
+  .row {
+    flex-direction: column;
+  }
+  .card {
+    width: 100%;
+  }
+}
+
+.checkbox-group {
+  display: flex;
+  padding-top: 10px;
+}
+
+a {
+  color: $primary;
+}
+
+.form-pane .button {
+  padding-top: 10px;
+}
+
+.add-border-success {
+  border: 2px solid $success !important;
+  background: url(https://cdn-icons-png.flaticon.com/512/463/463574.png) no-repeat 95%;
+  background-size: 19px;
+}
+
+.add-border-danger {
+  border: 2px solid $danger !important;
+  background: url(https://cdn-icons.flaticon.com/png/512/4201/premium/4201973.png?token=exp=1653562750~hmac=e492573f33e97cebbb49f685662555da)
+    no-repeat 95%;
+  background-size: 19px;
+}
+
+.add-border-warning {
+  border: 2px solid $warning !important;
+  background: url(https://cdn-icons.flaticon.com/png/512/3020/premium/3020000.png?token=exp=1653562490~hmac=27a3284a9df3f6d66d2391ed44756b4d)
+    no-repeat 95%;
+  background-size: 19px;
+}
+
+.invalid-feedback-danger {
+  @include feedback;
+  color: $danger;
+}
+
+.invalid-feedback-warning {
+  @include feedback;
+  color: $warning;
+}
+
+.valid-feedback {
+  @include feedback;
+  color: $success;
+}
+
+.notes {
+  margin-bottom: 15px;
+  padding: 4px 12px;
+}
+
+.danger {
+  background-color: #ffdddd;
+  border-left: 6px solid #f44336;
+}
+
+.success {
+  background-color: #ddffdd;
+  border-left: 6px solid #04aa6d;
+}
+
+.info {
+  background-color: #e7f3fe;
+  border-left: 6px solid #2196f3;
+}
+
+.warning {
+  background-color: #ffffcc;
+  border-left: 6px solid #ffeb3b;
+}
