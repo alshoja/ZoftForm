@@ -117,7 +117,7 @@ button[disabled] {
   border-bottom-left-radius: $leftRadius;
 }
 
-@media only screen and (min-width: 736px) {
+@media only screen and (min-width: 1120px) {
   .layout {
     display: flex;
   }
@@ -135,7 +135,7 @@ button[disabled] {
   color: $primary;
 }
 
-.information-pane h2 {
+.information-pane h3 {
   padding-top: 10px;
   padding-left: 15px;
 }
@@ -149,11 +149,11 @@ button[disabled] {
   font-size: 0.8rem;
 }
 
-.button-padding {
+.info-pane-button {
   padding: 15px;
 }
 
-.form-pane h2 {
+.form-pane h3 {
   padding-top: 10px;
   padding-left: 15px;
 }
@@ -199,7 +199,7 @@ input[type="password"] {
   outline: none;
 }
 
-@media only screen and (max-width: 736px) {
+@media only screen and (max-width: 1600px) {
   .row {
     flex-direction: column;
   }
