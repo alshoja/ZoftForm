@@ -80,7 +80,7 @@ $danger: #f44336;
 }
 
 .form-body {
-  background: white;
+  background: $white;
   padding: 5px 10px;
 }
 
@@ -107,11 +107,8 @@ input[type="password"] {
   color: #666;
   border: 1px solid #d6d6d6;
   border-radius: 4px;
-  // background: white;
   outline: none;
 }
-
-
 
 @media only screen and (max-width: 736px) {
   .row {
@@ -140,28 +137,23 @@ a {
 
 .add-border-danger {
   border: 2px solid $danger !important;
-  background: url(https://cdn-icons.flaticon.com/png/512/4201/premium/4201973.png?token=exp=1653562750~hmac=e492573f33e97cebbb49f685662555da) no-repeat 95%;
+  background: url(https://cdn-icons.flaticon.com/png/512/4201/premium/4201973.png?token=exp=1653562750~hmac=e492573f33e97cebbb49f685662555da)
+    no-repeat 95%;
   background-size: 19px;
 }
 
 .add-border-warning {
   border: 2px solid $warning !important;
-  background: url(https://cdn-icons.flaticon.com/png/512/3020/premium/3020000.png?token=exp=1653562490~hmac=27a3284a9df3f6d66d2391ed44756b4d) no-repeat 95%;
+  background: url(https://cdn-icons.flaticon.com/png/512/3020/premium/3020000.png?token=exp=1653562490~hmac=27a3284a9df3f6d66d2391ed44756b4d)
+    no-repeat 95%;
   background-size: 19px;
 }
 
-.invalid-feedback {
+.invalid-feedback-danger {
   width: 100%;
   margin-top: 0.25rem;
   font-size: 0.875em;
   color: $danger;
-}
-
-.valid-feedback {
-  width: 100%;
-  margin-top: 0.25rem;
-  font-size: 0.875em;
-  color: $success;
 }
 
 .invalid-feedback-warning {
@@ -171,7 +163,17 @@ a {
   color: $warning;
 }
 
-.inp-icon {
-  background: url(https://i.imgur.com/kSROoEB.png) no-repeat 100%;
-  background-size: 16px;
+.valid-feedback {
+  width: 100%;
+  margin-top: 0.25rem;
+  font-size: 0.875em;
+  color: $success;
+}
+
+button:disabled,
+button[disabled] {
+  border: 1px solid #eeeded;
+  background-color: #d3cccc;
+  color: #7a7a7a;
+  cursor: not-allowed;
 }
