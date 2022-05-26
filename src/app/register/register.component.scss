@@ -107,14 +107,11 @@ input[type="password"] {
   color: #666;
   border: 1px solid #d6d6d6;
   border-radius: 4px;
-  background: white;
+  // background: white;
   outline: none;
 }
 
-.x {
-  background: url(https://i.imgur.com/kSROoEB.png) no-repeat 100%;
-  background-size: 16px;
-}
+
 
 @media only screen and (max-width: 736px) {
   .row {
@@ -137,14 +134,20 @@ a {
 
 .add-border-success {
   border: 2px solid $success !important;
+  background: url(https://cdn-icons-png.flaticon.com/512/463/463574.png) no-repeat 95%;
+  background-size: 19px;
 }
 
 .add-border-danger {
   border: 2px solid $danger !important;
+  background: url(https://cdn-icons.flaticon.com/png/512/4201/premium/4201973.png?token=exp=1653562750~hmac=e492573f33e97cebbb49f685662555da) no-repeat 95%;
+  background-size: 19px;
 }
 
 .add-border-warning {
   border: 2px solid $warning !important;
+  background: url(https://cdn-icons.flaticon.com/png/512/3020/premium/3020000.png?token=exp=1653562490~hmac=27a3284a9df3f6d66d2391ed44756b4d) no-repeat 95%;
+  background-size: 19px;
 }
 
 .invalid-feedback {
