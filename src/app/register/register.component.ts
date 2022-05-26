@@ -26,7 +26,6 @@ export class RegisterComponent implements OnInit, OnDestroy {
   );
 
   constructor(private fb: FormBuilder, private readonly authService: AuthService, private router: Router) { }
-
   ngOnInit() {
   }
 
