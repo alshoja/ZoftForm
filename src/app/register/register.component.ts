@@ -30,14 +30,13 @@ export class RegisterComponent implements OnInit {
       validators: [Validation.match('password', 'confirmPassword')]
     });
 
-  submitted = false;
   constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
   }
 
   onSubmit(): void {
-    this.submitted = true;
+    console.log(this.form.invalid)
     if (this.form.invalid) {
       return;
     }

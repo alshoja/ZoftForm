@@ -91,17 +91,16 @@
                   <input type="checkbox" formControlName="acceptTerms">
                   I agree to the <a href=""> <span>Terms and Conditions</span></a>
                   <div *ngIf="f['acceptTerms'].touched && f['acceptTerms'].hasError('required')"
-                  class="invalid-feedback-danger">
-                  Please accept to our Terms & Conditions
-                </div>
+                    class="invalid-feedback-danger">
+                    Please accept to our Terms & Conditions
+                  </div>
                 </label>
               </div>
             </div>
             <div class="row">
               <div class="input-group">
                 <div class="button ">
-                  <button [disabled]="!form.valid" type="submit" class="primary text-white"
-                    type="button">Register</button>
+                  <button [disabled]="!form.valid" type="submit" class="primary text-white">Register</button>
                 </div>
               </div>
             </div>
