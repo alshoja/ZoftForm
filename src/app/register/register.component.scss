@@ -1,0 +1,174 @@
+$leftRadius: 10px;
+$primary: #3786be;
+$white: white;
+$warning: #ffd900;
+$success: #03d437;
+$danger: #f44336;
+
+.card {
+  background-color: $white;
+  margin-top: 10px;
+  border-radius: $leftRadius;
+  width: 50%;
+  margin: auto;
+  margin-bottom: auto;
+}
+
+.col {
+  padding: 1em;
+  height: auto;
+}
+
+.col-main {
+  flex: 1;
+}
+
+@media only screen and (min-width: 736px) {
+  .layout {
+    display: flex;
+  }
+}
+
+.primary {
+  background: $primary;
+}
+
+.border-left {
+  border-top-left-radius: $leftRadius;
+  border-bottom-left-radius: $leftRadius;
+}
+
+.text-white {
+  color: $white;
+}
+
+.text-primary {
+  color: $primary;
+}
+
+.information-pane h2 {
+  padding-top: 10px;
+  padding-left: 15px;
+}
+
+.information-pane .text-white {
+  padding-top: 10px;
+  padding-left: 15px;
+}
+
+.text-small {
+  font-size: 0.8rem;
+}
+
+.button-padding {
+  padding: 15px;
+}
+
+.form-pane h2 {
+  padding-top: 10px;
+  padding-left: 15px;
+}
+
+.form-pane .text-white {
+  padding-top: 10px;
+  padding-left: 15px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.form-body {
+  background: white;
+  padding: 5px 10px;
+}
+
+.input-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin: 10px 5px;
+}
+
+label {
+  color: #464646;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  font-size: 18px;
+  height: 34px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #666;
+  border: 1px solid #d6d6d6;
+  border-radius: 4px;
+  background: white;
+  outline: none;
+}
+
+.x {
+  background: url(https://i.imgur.com/kSROoEB.png) no-repeat 100%;
+  background-size: 16px;
+}
+
+@media only screen and (max-width: 736px) {
+  .row {
+    flex-direction: column;
+  }
+}
+
+.checkbox-group {
+  display: flex;
+  padding-top: 10px;
+}
+
+a {
+  color: $primary;
+}
+
+.form-pane .button {
+  padding-top: 10px;
+}
+
+.add-border-success {
+  border: 2px solid $success !important;
+}
+
+.add-border-danger {
+  border: 2px solid $danger !important;
+}
+
+.add-border-warning {
+  border: 2px solid $warning !important;
+}
+
+.invalid-feedback {
+  width: 100%;
+  margin-top: 0.25rem;
+  font-size: 0.875em;
+  color: $danger;
+}
+
+.valid-feedback {
+  width: 100%;
+  margin-top: 0.25rem;
+  font-size: 0.875em;
+  color: $success;
+}
+
+.invalid-feedback-warning {
+  width: 100%;
+  margin-top: 0.25rem;
+  font-size: 0.875em;
+  color: $warning;
+}
+
+.inp-icon {
+  background: url(https://i.imgur.com/kSROoEB.png) no-repeat 100%;
+  background-size: 16px;
+}
