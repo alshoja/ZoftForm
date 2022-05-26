@@ -38,13 +38,12 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit(): void {
-    console.log(this.form.invalid)
     if (this.form.invalid) {
       return;
     }
     this.authService.register(this.form.value).subscribe({
       next: (post) => {
-        this.router.navigateByUrl('/post/detail', { state: post });
+        this.router.navigateByUrl('register/success');
       },
       error: (err) => { console.error(err) }
     });
