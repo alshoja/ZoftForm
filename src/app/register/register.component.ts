@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, FormBuilder, Validators, AbstractControl } from '@angular/forms';
+import { AbstractControl, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 import Validation from './utils/validation';
@@ -42,7 +42,7 @@ export class RegisterComponent implements OnInit {
       return;
     }
     this.authService.register(this.form.value).subscribe({
-      next: (post) => {
+      next: (auth) => {
         this.router.navigateByUrl('register/success');
       },
       error: (err) => { console.error(err) }
