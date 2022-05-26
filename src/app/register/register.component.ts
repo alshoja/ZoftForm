@@ -43,6 +43,7 @@ export class RegisterComponent implements OnInit, OnDestroy {
     if (this.form.invalid) {
       return;
     }
+
     this.authSubscription = this.authService.register(this.form.value).subscribe({
       next: (auth) => {
         console.log(JSON.stringify(this.form.value, null, 2));
