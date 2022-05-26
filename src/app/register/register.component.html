@@ -22,50 +22,52 @@
       <div class="col col-main form-pane">
         <h2 class="text-primary">REGISTER FORM</h2>
         <div class="form-body">
-          <div class="row">
-            <div class="input-group">
-              <label>First name </label>
-              <input type="text">
-            </div>
-            <div class="input-group">
-              <label>Last name</label>
-              <input type="text">
-            </div>
-          </div>
-          <div class="row">
-            <div class="input-group">
-              <label>Your Email </label>
-              <input type="email">
-            </div>
-          </div>
-          <div class="row">
-            <div class="input-group">
-              <label>Password </label>
-              <input type="password">
-            </div>
-            <div class="input-group">
-              <label>Confirm Password</label>
-              <input type="password" class="add-border-warning">
-              <div class="invalid-feedback-warning">
-                Wrong Password!
+          <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="row">
+              <div class="input-group">
+                <label>First name </label>
+                <input type="text" formControlName="firstName">
+              </div>
+              <div class="input-group">
+                <label>Last name</label>
+                <input type="text" formControlName="lastName">
               </div>
             </div>
-          </div>
-          <div class="checkbox-group">
-            <div>
-              <label for="music">
-                <input type="checkbox" id="music">
-                I agree to the <a href=""> <span>Terms and Conditions</span></a>
-              </label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="input-group">
-              <div class="button ">
-                <button class="primary text-white" type="button">Register</button>
+            <div class="row">
+              <div class="input-group">
+                <label>Your Email </label>
+                <input type="email" formControlName="email">
               </div>
             </div>
-          </div>
+            <div class="row">
+              <div class="input-group">
+                <label>Password </label>
+                <input type="password" formControlName="password">
+              </div>
+              <div class="input-group">
+                <label>Confirm Password</label>
+                <input type="password" formControlName="confirmPassword" class="add-border-warning">
+                <div class="invalid-feedback-warning">
+                  Wrong Password!
+                </div>
+              </div>
+            </div>
+            <div class="checkbox-group">
+              <div>
+                <label for="music">
+                  <input type="checkbox" formControlName="acceptTerms">
+                  I agree to the <a href=""> <span>Terms and Conditions</span></a>
+                </label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-group">
+                <div class="button ">
+                  <button [disabled]="!form.valid" type="submit" class="primary text-white" type="button">Register</button>
+                </div>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
     </div>
