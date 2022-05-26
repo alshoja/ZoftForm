@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder, Validators, AbstractControl } from '@angular/forms';
 import Validation from './utils/validation';
 
 @Component({
@@ -21,8 +21,6 @@ export class RegisterComponent implements OnInit {
       '',
       [
         Validators.required,
-        Validators.minLength(6),
-        Validators.maxLength(40)
       ]
     ],
     confirmPassword: ['', Validators.required],
@@ -38,6 +36,16 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSubmit(): void { }
+  onSubmit(): void {
+    this.submitted = true;
+    if (this.form.invalid) {
+      return;
+    }
+    console.log(JSON.stringify(this.form.value, null, 2));
+  }
+
+  get f(): { [key: string]: AbstractControl } {
+    return this.form.controls;
+  }
 
 }
