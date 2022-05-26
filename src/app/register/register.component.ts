@@ -14,25 +14,16 @@ export class RegisterComponent implements OnInit, OnDestroy {
   public authSubscription!: Subscription;
   form = this.fb.group({
     firstName: ['', Validators.required],
-    lastName: [
-      '',
-      [
-        Validators.required,
-      ]
-    ],
+    lastName: ['', Validators.required],
     email: ['', [Validators.required, Validators.email]],
-    password: [
-      '',
-      [
-        Validators.required,
-      ]
-    ],
+    password: ['', Validators.required],
     confirmPassword: ['', Validators.required],
     acceptTerms: [false, Validators.requiredTrue]
   },
-    {
-      validators: [Validation.match('password', 'confirmPassword')]
-    });
+  {
+    validators: [Validation.match('password', 'confirmPassword')]
+  }
+  );
 
   constructor(private fb: FormBuilder, private readonly authService: AuthService, private router: Router) { }
 
