@@ -6,21 +6,22 @@
 
 body {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   background-color: $body-background;
   letter-spacing: 0.5px;
+  font-size: 16px;
 }
 
 button {
   padding: 0.9em 1.7em;
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 700;
-  border-radius: 0.5em 0 0.5em 0;
+  border-radius: 5px 0 5px 0;
   border: 1px solid $text-secondary-light;
   transition: all 0.3s;
   cursor: pointer;
-  height: 42px;
-  width: 150px;
+  min-width: 150px;
+  text-align: center;
 }
 
 button:hover {
@@ -38,123 +39,56 @@ button[disabled] {
   color: $text-secondary;
   cursor: not-allowed;
 }
+.link {
+  font-weight: 700;
+}
 
 label {
   color: $text-secondary;
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 500;
   padding-bottom: 6px;
+}
+.c_label {
+  color: $text-secondary;
+  font-size: 16px;
+  font-weight: 500;
+  padding-bottom: 6px;
+  margin-left: 10px;
+  line-height: 26px;
 }
 
 input[type='text'],
 input[type='email'],
 input[type='password'] {
-  font-size: 18px;
+  font-size: 16px;
   padding: 0.5rem 1rem;
   color: $text-secondary;
   border: 1px solid $text-secondary-light;
-  border-radius: 0.5em 0 0.5em 0;
+  border-radius: 5px 0 5px 0;
   outline: none;
-}
-
-// .checkbox-group {
-//   display: block;
-//   margin-bottom: 15px;
-//   margin: 10px 5px;
-// }
-
-.styled-checkbox {
-  position: absolute; // take it out of document flow
-  opacity: 0; // hide it
-
-  & + label {
-    position: relative;
-    cursor: pointer;
-    padding: 0;
-  }
-
-  // Box.
-  & + label:before {
-    content: '';
-    margin-right: 10px;
-    display: inline-block;
-    vertical-align: text-top;
-    width: 20px;
-    height: 20px;
-    background: white;
-  }
-
-  // Box hover
-  &:hover + label:before {
-    background: #f35429;
-  }
-
-  // Box focus
-  &:focus + label:before {
-    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12);
-  }
-
-  // Box checked
-  &:checked + label:before {
-    background: #f35429;
-  }
-
-  // Disabled state label.
-  &:disabled + label {
-    color: #b8b8b8;
-    cursor: auto;
-  }
-
-  // Disabled box.
-  &:disabled + label:before {
-    box-shadow: none;
-    background: #ddd;
-  }
-
-  // Checkmark. Could be replaced with an image
-  &:checked + label:after {
-    content: '';
-    position: absolute;
-    left: 5px;
-    top: 9px;
-    background: white;
-    width: 2px;
-    height: 2px;
-    box-shadow: 2px 0 0 white, 4px 0 0 white, 4px -2px 0 white, 4px -4px 0 white,
-      4px -6px 0 white, 4px -8px 0 white;
-    transform: rotate(45deg);
-  }
 }
 
 a {
   color: $primary;
 }
 
-.main {
-  padding: 20px 40px;
-}
-
 .card {
   background-color: $white;
   margin-top: 10px;
-  border-radius: $border-radius;
-  width: 50%;
+  border-radius: 10px;
   margin: auto;
   margin-bottom: auto;
+  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2);
 }
 
 .col {
-  padding: 1em;
+  padding: 2em;
   height: auto;
 }
 
 .col-main {
   flex: 1;
-}
-
-.border-left {
-  border-top-left-radius: $border-radius;
-  border-bottom-left-radius: $border-radius;
 }
 
 .primary {
@@ -170,34 +104,27 @@ a {
 }
 
 .information-pane h3 {
-  @include pane;
-}
-
-.information-pane .text-white {
-  @include pane;
+  font-size: 26px;
 }
 
 .text-small {
-  font-size: 0.8rem;
+  font-size: 16px;
   line-height: 1.8em;
 }
 
 .info-pane-button {
-  padding: 15px;
+  padding: 15px 0;
 }
 
 .form-pane h3 {
-  @include pane;
-}
-
-.form-pane .text-white {
-  @include pane;
-  width: 120px;
+  font-size: 26px;
 }
 
 .row {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: -10px;
+  margin-right: -10px;
 }
 
 .form-body {
@@ -209,7 +136,7 @@ a {
   flex: 1;
   display: flex;
   flex-direction: column;
-  margin: 10px 5px;
+  padding: 10px 10px;
 }
 
 .checkbox-group {
@@ -275,19 +202,58 @@ a {
   @include background-color-white;
   border-left: 6px solid $warning;
 }
-
+.main {
+  padding: 20px 30px;
+  margin: 0 auto;
+  max-width: 1050px;
+}
+.left {
+  border-radius: 10px 10px 0 0;
+  width: 100%;
+  flex: 0 0 auto;
+}
+.right {
+  width: 100%;
+  flex: 0 0 auto;
+  background-color: #fff;
+  border-radius: 0 0 10px 10px;
+}
+@media only screen and (min-width: 640px) {
+  .half_inp {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 980px) {
+  .main {
+    padding: 20px 40px;
+  }
+}
 @media only screen and (min-width: 1120px) {
   .layout {
     display: flex;
-    box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2);
+    flex-wrap: wrap;
+  }
+  .left {
+    border-radius: 10px 0 0 10px;
+    width: 50%;
+    flex: 0 0 auto;
+  }
+  .right {
+    width: 50%;
+    flex: 0 0 auto;
+    border-radius: 0 10px 10px 0;
+  }
+  .half_inp {
+    width: 50%;
+    flex: 0 0 auto;
+  }
+  .col {
+    padding: 2.5em;
+    height: auto;
   }
 }
-
-@media only screen and (max-width: 1600px) {
-  .row {
-    flex-direction: column;
-  }
-  .card {
-    width: 100%;
+@media only screen and (min-width: 1400px) {
+  .half_inp {
+    width: 50%;
   }
 }

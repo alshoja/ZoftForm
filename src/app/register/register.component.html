@@ -1,104 +1,187 @@
 <div class="card">
   <div class="row">
-    <div class="layout">
-      <div class="col col-main primary border-left information-pane">
-        <h3 class="text-white">INFORMATION</h3>
-        <p class="text-white text-small">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-          Lorem Ipsum has
-          been the
-          industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and </p>
+    <!-- <div class="layout"> -->
+    <div class="col left col-main primary information-pane">
+      <h3 class="text-white">INFORMATION</h3>
+      <p class="text-white text-small">
+        Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry. Lorem Ipsum has been the industry's standard dummy text ever
+        since the 1500s, when an unknown printer took a galley of type and
+      </p>
 
-        <p class="text-white text-small"><strong>Lorem Ipsum:</strong>
-          electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of
-          PageMaker including versions of Lorem Ipsum.</p>
-        <div class="info-pane-button">
-          <button type="button">Have An Account</button>
-        </div>
+      <p class="text-white text-small">
+        <strong>Lorem Ipsum:</strong> electronic typesetting, remaining
+        essentially unchanged. It was popularised in the 1960s with the release
+        of PageMaker including versions of Lorem Ipsum.
+      </p>
+      <div class="info-pane-button">
+        <button type="button">Have An Account</button>
       </div>
+    </div>
 
-      <div class="col col-main form-pane">
-        <h3 class="text-primary">REGISTER FORM</h3>
-        <form [formGroup]="form" (ngSubmit)="onSubmit()">
-          <div class="row">
-            <div class="input-group">
-              <label>First name </label>
-              <input type="text"
-                [ngClass]="{ 'add-border-warning':  f['firstName'].touched && f['firstName'].errors,'add-border-success': !f['firstName'].errors }"
-                formControlName="firstName">
-              <div *ngIf="f['firstName'].touched && f['firstName'].hasError('required')"
-                class="invalid-feedback-warning">
-                First name Required
-              </div>
-            </div>
-            <div class="input-group">
-              <label>Last name</label>
-              <input type="text"
-                [ngClass]="{ 'add-border-warning':f['lastName'].touched && f['lastName'].touched && f['lastName'].errors,'add-border-success': !f['lastName'].errors }"
-                formControlName="lastName">
-              <div *ngIf="f['lastName'].touched && f['lastName'].hasError('required')" class="invalid-feedback-warning">
-                Last name Required
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="input-group">
-              <label>Your Email </label>
-              <input type="email"
-                [ngClass]="{ 'add-border-warning':f['email'].touched && f['email'].errors ,'add-border-success': !f['email'].errors }"
-                formControlName="email">
-              <div *ngIf="f['email'].touched &&f['email'].hasError('required')" class="invalid-feedback-warning">
-                Email Required
-              </div>
-              <div *ngIf="f['email'].touched &&f['email'].hasError('pattern')" class="invalid-feedback-warning">
-                Valid Email Required
-              </div>
+    <div class="col right col-main form-pane">
+      <h3 class="text-primary">REGISTER FORM</h3>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="row">
+          <div class="input-group half_inp">
+            <label>First name </label>
+            <input
+              type="text"
+              [ngClass]="{
+                'add-border-warning':
+                  f['firstName'].touched && f['firstName'].errors,
+                'add-border-success': !f['firstName'].errors
+              }"
+              formControlName="firstName"
+            />
+            <div
+              *ngIf="
+                f['firstName'].touched && f['firstName'].hasError('required')
+              "
+              class="invalid-feedback-warning"
+            >
+              First name Required
             </div>
           </div>
-          <div class="row">
-            <div class="input-group">
-              <label>Password </label>
-              <input type="password"
-                [ngClass]="{ 'add-border-warning':f['password'].touched && f['password'].errors,'add-border-success': !f['password'].errors }"
-                formControlName="password">
-              <div *ngIf="f['password'].touched && f['password'].hasError('required')" class="invalid-feedback-warning">
-                Password Required
-              </div>
-            </div>
-            <div class="input-group">
-              <label>Confirm Password</label>
-              <input type="password"
-                [ngClass]="{ 'add-border-warning':f['confirmPassword'].touched && f['confirmPassword'].errors ,'add-border-success': !f['confirmPassword'].errors}"
-                formControlName="confirmPassword">
-              <div *ngIf="f['confirmPassword'].touched && f['confirmPassword'].hasError('required')"
-                class="invalid-feedback-warning">
-                Confirm Password Required
-              </div>
-              <div *ngIf="f['confirmPassword'].touched && f['confirmPassword'].hasError('matching')"
-                class="invalid-feedback-warning">
-                Confirm Password does not match
-              </div>
+          <div class="input-group half_inp">
+            <label>Last name</label>
+            <input
+              type="text"
+              [ngClass]="{
+                'add-border-warning':
+                  f['lastName'].touched &&
+                  f['lastName'].touched &&
+                  f['lastName'].errors,
+                'add-border-success': !f['lastName'].errors
+              }"
+              formControlName="lastName"
+            />
+            <div
+              *ngIf="
+                f['lastName'].touched && f['lastName'].hasError('required')
+              "
+              class="invalid-feedback-warning"
+            >
+              Last name Required
             </div>
           </div>
-          <div class="checkbox-group">
-            <div>
-              <label>
-                <input type="checkbox" formControlName="acceptTerms">
-                <b>I agree to the </b> <a href=""> <span>Terms and Conditions</span></a>
-                <div *ngIf="f['acceptTerms'].touched && f['acceptTerms'].hasError('required')"
-                  class="invalid-feedback-danger">
+        </div>
+        <div class="row">
+          <div class="input-group">
+            <label>Your Email </label>
+            <input
+              type="email"
+              [ngClass]="{
+                'add-border-warning': f['email'].touched && f['email'].errors,
+                'add-border-success': !f['email'].errors
+              }"
+              formControlName="email"
+            />
+            <div
+              *ngIf="f['email'].touched && f['email'].hasError('required')"
+              class="invalid-feedback-warning"
+            >
+              Email Required
+            </div>
+            <div
+              *ngIf="f['email'].touched && f['email'].hasError('pattern')"
+              class="invalid-feedback-warning"
+            >
+              Valid Email Required
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-group half_inp">
+            <label>Password </label>
+            <input
+              type="password"
+              [ngClass]="{
+                'add-border-warning':
+                  f['password'].touched && f['password'].errors,
+                'add-border-success': !f['password'].errors
+              }"
+              formControlName="password"
+            />
+            <div
+              *ngIf="
+                f['password'].touched && f['password'].hasError('required')
+              "
+              class="invalid-feedback-warning"
+            >
+              Password Required
+            </div>
+          </div>
+          <div class="input-group half_inp">
+            <label>Confirm Password</label>
+            <input
+              type="password"
+              [ngClass]="{
+                'add-border-warning':
+                  f['confirmPassword'].touched && f['confirmPassword'].errors,
+                'add-border-success': !f['confirmPassword'].errors
+              }"
+              formControlName="confirmPassword"
+            />
+            <div
+              *ngIf="
+                f['confirmPassword'].touched &&
+                f['confirmPassword'].hasError('required')
+              "
+              class="invalid-feedback-warning"
+            >
+              Confirm Password Required
+            </div>
+            <div
+              *ngIf="
+                f['confirmPassword'].touched &&
+                f['confirmPassword'].hasError('matching')
+              "
+              class="invalid-feedback-warning"
+            >
+              Confirm Password does not match
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-group">
+            <div class="styled-checkbox">
+              <input
+                type="checkbox"
+                id="styled-checkbox-1"
+                formControlName="acceptTerms"
+              />
+              <label class="c_label" for="styled-checkbox-1">
+                <b>I agree to the </b>
+                <a class="link" href=""> <span>Terms and Conditions</span></a>
+                <div
+                  *ngIf="
+                    f['acceptTerms'].touched &&
+                    f['acceptTerms'].hasError('required')
+                  "
+                  class="invalid-feedback-danger"
+                >
                   Please accept to our Terms & Conditions
                 </div>
               </label>
             </div>
           </div>
-          <div class="row">
-            <div class="input-group">
-              <div class="button ">
-                <button [disabled]="!form.valid" type="submit" class="primary text-white">Register</button>
-              </div>
+        </div>
+        <div class="row">
+          <div class="input-group">
+            <div class="button">
+              <button
+                [disabled]="!form.valid"
+                type="submit"
+                class="primary text-white"
+              >
+                Register
+              </button>
             </div>
           </div>
-        </form>
-      </div>
+        </div>
+      </form>
     </div>
+    <!-- </div> -->
   </div>
+</div>
