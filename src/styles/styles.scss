@@ -17,6 +17,8 @@ button {
   border: 1px solid $text-secondary-light;
   transition: all 0.3s;
   cursor: pointer;
+  height: 42px;
+  width: 150px;
 }
 
 button:hover {
@@ -119,6 +121,7 @@ a {
 
 .form-pane .text-white {
   @include pane;
+  width: 120px;
 }
 
 .row {
@@ -153,14 +156,14 @@ a {
 
 .add-border-danger {
   @include border(
-    "https://cdn-icons.flaticon.com/png/512/4201/premium/4201973.png?token=exp=1653562750~hmac=e492573f33e97cebbb49f685662555da",
+    "https://imgur.com/HVedraM.png",
     $danger
   );
 }
 
 .add-border-warning {
   @include border(
-    "https://cdn-icons.flaticon.com/png/512/3020/premium/3020000.png?token=exp=1653562490~hmac=27a3284a9df3f6d66d2391ed44756b4d",
+    "https://i.imgur.com/UWevNE5.png",
     $warning
   );
 }
