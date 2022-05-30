@@ -37,7 +37,7 @@ export class RegisterComponent implements OnInit, OnDestroy {
     this.authSubscription = this.authService.register(this.form.value).subscribe({
       next: (auth) => {
         console.log(JSON.stringify(this.form.value, null, 2));
-        this.router.navigateByUrl('register/success');
+        this.router.navigateByUrl('success');
       },
       error: (err) => { console.error(err) }
     });
